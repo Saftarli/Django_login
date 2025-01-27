@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Ana Səhifəyə Hoş Gəlmisiniz</h1>
+    {% if user.is_authenticated %}
+        <p>Xoş gəlmisiniz, {{ user.email }}!</p>
+    {% else %}
+        <p>Giriş etmək üçün <a href="{% url 'login' %}">buraya klikləyin</a></p>
+    {% endif %}
+{% endblock %}
